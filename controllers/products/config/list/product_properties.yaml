@@ -1,0 +1,29 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/gromit/catalog/controllers/products/config/list/columns/product_properties.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\ProductProperty
+
+filter: $/gromit/catalog/controllers/products/config/filter/product_properties.yaml
+
+# Link URL for each record
+recordOnClick: "$.popup({ handler: 'onOpenValueForm', size: 'huge', extraData: { product_property_id: ':id' } })"
+
+# Message to display if the list is empty
+noRecordsMessage: Нет привязанных характеристик
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+structure:
+    showTree: false
+    showReorder: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: toolbars/product_properties

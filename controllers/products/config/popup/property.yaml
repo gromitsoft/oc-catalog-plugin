@@ -1,0 +1,16 @@
+type: form
+actionBtnLabel: Добавить
+actionOnClick: onAddGroup
+closeOnSuccess: true
+modelClass: GromIT\Catalog\Models\ProductProperty
+form:
+    fields:
+
+        product_id:
+            label: product_id
+
+        property_id:
+            label: Характеристика
+            type: dropdown
+
+popupId: product-properties-property

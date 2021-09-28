@@ -1,0 +1,86 @@
+<?php
+
+use GromIT\Catalog\Models\Category;
+
+/** @var Category $formModel */
+
+Block::put('breadcrumb') ?>
+<ul>
+    <li><a href="<?= Backend::url('gromit/catalog/products') ?>">Товары</a></li>
+    <?php if (!$this->fatalError): ?>
+        <li><?= $formModel->name ?></li>
+    <?php endif ?>
+</ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?php Block::put('form-contents') ?>
+    <h3 class="m-t-0">
+        <?= $formModel->name ?>
+    </h3>
+
+    <div class="small text-muted pull-right">
+        &nbsp;&nbsp;Обновлено <?= $formModel->updated_at->format('d.m.Y в H:i') ?>
+    </div>
+
+    <hr>
+
+    <div class="layout-row">
+        <?= $this->formRenderOutsideFields() ?>
+        <?= $this->formRenderPrimaryTabs() ?>
+    </div>
+
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button
+                type="submit"
+                data-request="onSave"
+                data-request-data="redirect:0"
+                data-hotkey="ctrl+s, cmd+s"
+                data-load-indicator="Сохраняем.."
+                class="btn btn-primary">
+                <?= e(trans('backend::lang.form.save')) ?>
+            </button>
+            <button
+                type="button"
+                data-request="onSave"
+                data-request-data="close:1"
+                data-hotkey="ctrl+enter, cmd+enter"
+                data-load-indicator="Сохраняем.."
+                class="btn btn-default">
+                <?= e(trans('backend::lang.form.save_and_close')) ?>
+            </button>
+            <button
+                type="button"
+                class="oc-icon-trash-o btn-icon danger pull-right"
+                data-request="onDelete"
+                data-load-indicator="Удаляем.."
+                data-request-confirm="Удалить товар?">
+            </button>
+            <span class="btn-text">
+                    <?= e(trans('backend::lang.form.or')) ?>&nbsp;&nbsp;<a
+                    href="<?= $this->actionUrl('/') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
+                </span>
+        </div>
+    </div>
+
+    <?php Block::endPut() ?>
+
+    <?php Block::put('form-sidebar') ?>
+    <div class="hide-tabs"><?= $this->formRenderSecondaryTabs() ?></div>
+    <?php Block::endPut() ?>
+
+    <?php Block::put('body') ?>
+    <?= Form::open(['class' => 'layout stretch']) ?>
+    <?= $this->makeLayout('form-with-sidebar') ?>
+    <?= Form::close() ?>
+    <?php Block::endPut() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('gromit/catalog/products') ?>"
+          class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+
+<?php endif ?>

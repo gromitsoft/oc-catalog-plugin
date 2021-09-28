@@ -1,0 +1,56 @@
+<?php
+
+use GromIT\Catalog\Models\ProductProperty;
+
+/** @var ProductProperty $product_property */
+
+?>
+
+<div class="modal-header">
+    <button type="button" id="close-modal-new-value" class="close" data-dismiss="popup">&times;</button>
+    <h4 class="modal-title">
+        Новое значение
+    </h4>
+</div>
+<div class="modal-body">
+    <?= Form::open(['class' => 'layout']) ?>
+    <div class="layout-row">
+
+        <input type="hidden" name="product_property_id" value="<?= $product_property->id ?>">
+
+
+        <div class="form-group  text-field span-full  is-required">
+            <label for="new_value">
+                Новое значение
+            </label>
+
+            <input
+                type="text"
+                name="new_value"
+                id="new_value"
+                value="" placeholder=""
+                class="form-control"
+                autocomplete="off"
+                maxlength="255">
+        </div>
+
+    </div>
+
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button
+                type="submit"
+                data-request="onSaveProductPropertyNewValue"
+                data-load-indicator="Сохраняем"
+                data-request-success="$('#close-modal-new-value').trigger('click')"
+                class="btn btn-primary">
+                Сохранить
+            </button>
+        </div>
+    </div>
+
+    <?= Form::close() ?>
+</div>
+
+
+

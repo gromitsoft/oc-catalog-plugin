@@ -1,0 +1,34 @@
+type: form
+actionBtnLabel: Сохранить
+actionOnClick: onSaveValue
+closeOnSuccess: true
+modelClass: GromIT\Catalog\Models\Value
+form:
+    fields:
+        id:
+            cssClass: hidden
+
+        name:
+            label: Значение
+
+        image:
+            label: Изображение
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+
+        is_default:
+            label: Это значение по-умолчанию
+            type: switch
+
+popupId: property-value

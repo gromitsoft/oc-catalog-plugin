@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Предложение
+        width: 30%
+        searchable: true
+
+    vendor_code:
+        label: Артикул
+        searchable: true

@@ -1,0 +1,16 @@
+<?php
+
+use Backend\Facades\Backend;
+use GromIT\Catalog\Models\Offer;
+
+/** @var Offer $record */
+
+?>
+
+<div class="edit_values">
+    <a href="<?= Backend::url('gromit/catalog/offers/update/' . $record->id
+        . '?controller=products&action=update&record_id=' . $this->params[0]) ?>"
+       class="btn btn-default btn-xs" role="button">
+        Ред.
+    </a>
+</div>

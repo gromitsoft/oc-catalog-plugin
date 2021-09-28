@@ -1,0 +1,39 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/gromit/catalog/controllers/properties/config/list/columns/values.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Value
+
+# Link URL for each record
+recordOnClick: "$.popup({ handler: 'onOpenPopup', extraData: { value_id: ':id', definition: 'value' } })"
+
+# Message to display if the list is empty
+noRecordsMessage: Значений не найдено
+
+# Display page numbers with pagination, disable to improve performance
+showPageNumbers: false
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Default sorting column
+# defaultSort:
+#     column: created_at
+#     direction: desc
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+structure:
+    showTree: false
+    showReorder: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: toolbars/values
+

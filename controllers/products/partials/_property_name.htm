@@ -1,0 +1,17 @@
+<?php
+
+use GromIT\Catalog\Models\ProductProperty;
+
+/** @var ProductProperty $record */
+
+?>
+
+<?= $record->property->name ?>
+&nbsp;/
+<span class="text-muted small">
+    <?php if ($record->property->group): ?>
+        <?= $record->property->group->name ?>
+    <?php else: ?>
+        Не входит в набор
+    <?php endif ?>
+</span>

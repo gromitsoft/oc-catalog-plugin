@@ -1,0 +1,27 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/gromit/catalog/controllers/products/config/list/columns/product_offers.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Offer
+
+# Link URL for each record
+recordOnClick: ""
+
+# Message to display if the list is empty
+noRecordsMessage: Нет предложений
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+structure:
+    showTree: false
+    showReorder: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: toolbars/product_offers

@@ -1,0 +1,13 @@
+<?php
+
+use GromIT\Catalog\Models\Value;
+
+/** @var Value $record */
+
+?>
+
+<?php if($record->is_default):?>
+    <i class="icon-check-circle-o text-success"></i>
+<?php else:?>
+    &mdash;
+<?php endif?>

@@ -1,0 +1,15 @@
+<?php
+
+use GromIT\Catalog\Models\Property;
+
+/** @var Property $record */
+
+?>
+
+<?php if($record->multiple):?>
+    <i
+        class="octo-icon-list-add"
+        data-toggle="tooltip"
+        title="Разрешен выбор нескольких значений"
+    ></i>&nbsp;
+<?php endif?>

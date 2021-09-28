@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Property
+
+# Model Form Field configuration
+form: $/gromit/catalog/controllers/properties/config/form/fields/properties.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Property
+
+# Default redirect location
+defaultRedirect: gromit/catalog/properties
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: gromit/catalog/properties/update/:id
+    redirectClose: gromit/catalog/properties
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: gromit/catalog/properties
+    redirectClose: gromit/catalog/properties
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

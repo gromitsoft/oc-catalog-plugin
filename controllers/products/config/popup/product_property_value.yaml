@@ -1,0 +1,17 @@
+type: form
+actionBtnLabel: Сохранить
+actionOnClick: onSaveValues
+closeOnSuccess: true
+modelClass: GromIT\Catalog\Models\ProductPropertyValue
+form:
+    fields:
+
+        id:
+            cssClass: hidden
+
+        value_form:
+            label: Значение
+            type: partial
+            path: partial/product_property_values
+
+popupId: product-property-value

@@ -1,0 +1,15 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Значение
+        type: partial
+        path: partials/name_value
+        searchable: true
+
+    is_default:
+        label: По-умолчанию
+        type: partial
+        path: partials/is_default_value

@@ -1,0 +1,30 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Товар
+
+# Model Form Field configuration
+form: $/gromit/catalog/controllers/products/config/form/fields/products.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Product
+
+# Default redirect location
+defaultRedirect: gromit/catalog/products
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: gromit/catalog/products/update/:id
+    redirectClose: gromit/catalog/products
+    flashSave: Товар создан
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: gromit/catalog/products
+    redirectClose: gromit/catalog/products
+    flashSave: Товар сохранен
+    flashDelete: Товар удален

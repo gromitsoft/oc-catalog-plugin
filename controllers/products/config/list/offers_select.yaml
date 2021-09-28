@@ -1,0 +1,28 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/gromit/catalog/controllers/products/config/list/columns/offers_select.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Offer
+
+# Link URL for each record
+recordOnClick: "$(this).closest('.rowlink').find('input[type=checkbox]').trigger('click')"
+
+# Message to display if the list is empty
+noRecordsMessage:  Свободных предложений нет
+
+showPageNumbers: false
+
+# Displays the list column set up button
+
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: toolbars/offers_select
+    search:
+        prompt: backend::lang.list.search_prompt

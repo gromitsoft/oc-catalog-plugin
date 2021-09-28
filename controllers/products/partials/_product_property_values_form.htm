@@ -1,0 +1,51 @@
+<?php
+
+use GromIT\Catalog\Controllers\Products;
+use GromIT\Catalog\Models\ProductProperty;
+use GromIT\Catalog\Models\Property;
+
+/** @var Property $property */
+/** @var ProductProperty $product_property */
+/** @var Products $this */
+
+?>
+
+<div class="modal-header">
+    <button type="button" id="close-modal" class="close" data-dismiss="popup">&times;</button>
+    <h4 class="modal-title">
+        Редактирование значений
+    </h4>
+</div>
+<div class="modal-body">
+    <?= Form::open(['class' => 'layout']) ?>
+    <div class="layout-row">
+        <input type="hidden" name="product_property_id" value="<?= $product_property->id ?>">
+        <div id="values_list">
+            <?= $this->makePartial(
+                'partials/product_property_values_list',
+                [
+                    'property'         => $property,
+                    'product_property' => $product_property,
+                ]
+            ) ?>
+        </div>
+    </div>
+
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button
+                type="submit"
+                data-request="onSaveProductPropertyValues"
+                data-load-indicator="Сохраняем"
+                data-request-success="$('#close-modal').trigger('click')"
+                class="btn btn-default btn-block">
+                Сохранить
+            </button>
+        </div>
+    </div>
+
+    <?= Form::close() ?>
+</div>
+
+
+

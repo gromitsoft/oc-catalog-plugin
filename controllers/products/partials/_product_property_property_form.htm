@@ -1,0 +1,66 @@
+<?php
+
+/** @var array $properties_with_group */
+/** @var array $properties_without_group */
+
+?>
+
+<div class="modal-header">
+    <button type="button" id="close-modal" class="close" data-dismiss="popup">&times;</button>
+    <h4 class="modal-title">
+        Добавление характеристики
+    </h4>
+</div>
+<div class="modal-body">
+    <?php if (!empty($properties_without_group) || !empty($properties_with_group)): ?>
+        <?= Form::open(['class' => 'layout']) ?>
+        <div class="layout-row">
+            <div class="form-group dropdown-field span-full">
+                <select class="form-control custom-select" name="property_id">
+                    <?php if (!empty($properties_without_group)): ?>
+                        <optgroup label="Не входят в наборы">
+                            <?php foreach ($properties_without_group as $key => $val): ?>
+                                <option value="<?= $key ?>"><?= $val ?></option>
+                            <?php endforeach ?>
+                        </optgroup>
+                    <?php endif ?>
+                    <?php if (!empty($properties_with_group)): ?>
+                        <?php foreach ($properties_with_group as $group): ?>
+                            <optgroup label="<?= $group['group_name'] ?>">
+                                <?php foreach ($group['properties'] as $key => $val): ?>
+                                    <option value="<?= $key ?>"><?= $val ?></option>
+                                <?php endforeach ?>
+                            </optgroup>
+                        <?php endforeach; ?>
+                    <?php endif ?>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSaveProductProperty"
+                    data-load-indicator="Сохраняем"
+                    data-request-success="$('#close-modal').trigger('click')"
+                    class="btn btn-default btn-block">
+                    Сохранить
+                </button>
+            </div>
+        </div>
+
+        <?= Form::close() ?>
+    <?php else: ?>
+        <div class="callout fade in callout-warning">
+            <div class="header">
+                <i class="icon-warning"></i>
+                <h3>Нет свободных характеристик</h3>
+                <p>Все характеристики уже добавлены к товару</p>
+            </div>
+        </div>
+    <?php endif ?>
+</div>
+
+
+

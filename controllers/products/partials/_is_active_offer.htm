@@ -1,0 +1,22 @@
+<?php
+
+use GromIT\Catalog\Models\Offer;
+
+/** @var Offer $record */
+
+?>
+
+<div id="active_switcher_<?= $record->id ?>">
+    <label class="custom-switch">
+        <input
+            type="checkbox"
+            name="is_active"
+            class="switcher"
+            <?= $record->is_active ? 'checked' : '' ?>
+            data-request="onChangeActive"
+            data-request-data="id: <?= $record->id ?>, list: 'product_offers'"
+        />
+        <span><span>Вкл</span><span>Выкл</span></span>
+        <a class="slide-button"></a>
+    </label>
+</div>

@@ -1,0 +1,26 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Товар
+        type: partial
+        path: partials/name
+        searchable: true
+
+    full_category:
+        label: Категория
+        cssClass: small text-muted
+
+    vendor_code:
+        label: Артикул
+
+    slug:
+        label: Slug
+
+    is_active:
+        label: Статус
+        type: partial
+        path: partials/is_active
+        clickable: false

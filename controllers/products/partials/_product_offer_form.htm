@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <button type="button" id="close-modal" class="close" data-dismiss="popup">&times;</button>
+    <h4 class="modal-title">
+        Новое предложение
+    </h4>
+</div>
+<div class="modal-body">
+    <?= Form::open(['class' => 'layout']) ?>
+    <div class="layout-row">
+        <div class="form-group text-field span-full is-required">
+            <label>Название предложения</label>
+            <input type="text" name="name" value="" class="form-control" />
+        </div>
+        <div class="form-group text-field span-full is-required">
+            <label>Артикул</label>
+            <input type="text" name="vendor_code" value="" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button
+                type="submit"
+                data-request="onSaveProductOffer"
+                data-load-indicator="Сохраняем"
+                data-request-success="$('#close-modal').trigger('click')"
+                class="btn btn-default btn-block">
+                Добавить
+            </button>
+        </div>
+    </div>
+    <?= Form::close() ?>
+</div>
+
+
+

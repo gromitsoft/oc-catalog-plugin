@@ -1,0 +1,92 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: Название товара
+        comment: Укажите название товара
+        span: left
+
+    category:
+        label: Категория товара
+        type: relation
+        emptyOption: --- Выберите категорию ---
+        comment: Выберите категорию товара
+        span: right
+
+    slug:
+        label: В транслите
+        comment: Название в транслите
+        preset:
+            field: name
+            type: slug
+        span: left
+
+    description:
+        label: Текстовое описание
+        type: richeditor
+        toolbarButtons: fullscreen, bold, italic, underline, strikeThrough, clearFormatting, html
+        span: right
+
+    vendor_code:
+        label: Артикул
+        span: left
+        comment: Укажите артикул товара
+
+tabs:
+
+    fields:
+
+        product_offers:
+            context: update
+            type: partial
+            path: partials/product_offers
+            tab: Предложения
+
+        product_properties:
+            context: update
+            type: partial
+            path: partials/product_properties
+            tab: Характеристики
+
+secondaryTabs:
+    fields:
+        image:
+            label: Основное фото
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+
+        images:
+            label: Дополнительные фотографии
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+
+        is_active:
+            label: Активный товар
+            type: switch
+            on: Да
+            off: Нет

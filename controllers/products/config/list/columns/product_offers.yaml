@@ -1,0 +1,30 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: Предложение
+        type: partial
+        path: partials/name_offer
+        searchable: true
+
+    vendor_code:
+        label: Артикул
+        clickable: false
+
+    is_active:
+        label: Статус
+        type: partial
+        path: partials/is_active_offer
+        clickable: false
+
+    edit_value:
+        label: '&nbsp;'
+        type: partial
+        path: partials/edit_offer
+        clickable: false
+        searchable: false
+        sortable: false
+

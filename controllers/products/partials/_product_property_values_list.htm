@@ -1,0 +1,131 @@
+<?php
+
+use GromIT\Catalog\Models\ProductProperty;
+use GromIT\Catalog\Models\Property;
+use GromIT\Catalog\Models\Value;
+use October\Rain\Database\Collection;
+
+/** @var Property $property */
+/** @var ProductProperty $product_property */
+/** @var Collection|Value[] $values */
+
+$values = $property->values;
+
+$saved_values = $product_property
+    ->product_property_values()
+    ->pluck('value_id')
+    ->all();
+
+?>
+
+<?php if ($property->multiple): ?>
+
+    <div class="form-group checkboxlist-field span-full" data-field-name="values">
+
+        <div class="field-checkboxlist">
+
+            <div class="checkboxlist-controls">
+
+                <button
+                    class="backend-toolbar-button control-button"
+                    data-control="popup"
+                    data-handler="onOpenNewValueForm"
+                    data-size="medium"
+                    data-request-data="product_property_id: <?= $product_property->id ?>"
+                >
+                    <i class="octo-icon-plus"></i>
+                    <span class="button-label">Создать</span>
+                </button>
+
+                <a
+                    href="javascript: $('.checkboxes-<?= $property->id ?> input:checkbox').prop('checked', 'checked');"
+                    class="backend-toolbar-button control-button"
+                    data-field-checkboxlist-all="">
+                    <i class="octo-icon-check-multi"></i>
+                    <span class="button-label">Выбрать все</span>
+                </a>
+
+                <a
+                    href="javascript: $('.checkboxes-<?= $property->id ?> input:checkbox').removeAttr('checked');"
+                    class="backend-toolbar-button control-button"
+                    data-field-checkboxlist-none=""
+                >
+                    <i class="octo-icon-eraser"></i>
+                    <span class="button-label">Отменить</span>
+                </a>
+
+            </div>
+
+            <div
+                class="field-checkboxlist-inner checkboxes-<?= $property->id ?> <?= ($values->count() > 5) ? 'columns-2' : '' ?>">
+
+                <?php foreach ($values as $value): ?>
+                    <div class="checkbox custom-checkbox">
+                        <input
+                            type="checkbox"
+                            id="value_<?= $value->id ?>"
+                            name="values[]"
+                            value="<?= $value->id ?>"
+                            <?php if (
+                                ($value->is_default && empty($saved_values))
+                                || (!empty($saved_values) && in_array($value->id, $saved_values))
+                            ): ?>
+                                checked="checked"
+                            <?php endif ?>
+                        >
+                        <label class="storm-icon-pseudo" for="value_<?= $value->id ?>">
+                            <?= $value->name ?>
+                        </label>
+                    </div>
+                <?php endforeach; ?>
+
+            </div>
+
+        </div>
+    </div>
+<?php else: ?>
+    <div class="form-group checkboxlist-field span-full" data-field-name="values">
+
+        <div class="field-checkboxlist">
+
+            <div class="checkboxlist-controls">
+                <button
+                    class="backend-toolbar-button control-button"
+                    data-control="popup"
+                    data-handler="onOpenNewValueForm"
+                    data-size="medium"
+                    data-request-data="product_property_id: <?= $product_property->id ?>"
+                >
+                    <i class="octo-icon-plus"></i>
+                    <span class="button-label">Создать</span>
+                </button>
+            </div>
+
+            <div
+                class="field-checkboxlist-inner checkboxes-<?= $property->id ?> <?= ($values->count() > 5) ? 'columns-2' : '' ?>">
+                <?php foreach ($values as $value): ?>
+                    <div class="radio custom-radio">
+                        <input
+                            id="value-<?= $value->id ?>"
+                            name="values"
+                            value="<?= $value->id ?>"
+                            type="radio"
+                            <?php if (
+                                ($value->is_default && empty($saved_values))
+                                || (!empty($saved_values) && in_array($value->id, $saved_values))
+                            ): ?>
+                                checked="checked"
+                            <?php endif ?>
+                        >
+                        <label for="value-<?= $value->id ?>" class="storm-icon-pseudo">
+                            <?= $value->name ?>
+                        </label>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
+
+
+

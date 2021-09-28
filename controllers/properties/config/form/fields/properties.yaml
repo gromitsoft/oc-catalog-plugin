@@ -1,0 +1,64 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Название
+        comment: Укажите название характеристики
+        span: left
+
+    alt_name:
+        label: Альтернативное название
+        comment: Название характеристики, например для сайта
+        preset:
+            field: name
+            type: exact
+        span: right
+
+    multiple:
+        label: Несколько значений
+        comment: Характеристика может иметь несколько значений
+        type: switch
+tabs:
+
+    fields:
+        values:
+            context: update
+            type: partial
+            path: partials/values
+            tab: Значения
+
+secondaryTabs:
+    fields:
+        image:
+            label: Основное фото
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+
+        images:
+            label: Дополнительные фотографии
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
