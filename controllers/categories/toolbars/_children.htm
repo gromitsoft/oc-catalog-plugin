@@ -1,0 +1,23 @@
+<div data-control="toolbar">
+    <button class="btn btn-sm btn-default oc-icon-plus"
+            data-control="popup"
+            data-handler="onOpenPopup"
+            data-size="medium"
+            data-request-data="popupDefinition: 'child'">
+        Создать
+    </button>
+
+    <button
+        class="btn btn-sm btn-danger oc-icon-trash-o properties_list__remove"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.children_list .control-list').listWidget('getChecked') })"
+        data-request="onDeleteChildren"
+        data-request-confirm="Удалить выбранные подкатегории?"
+        data-trigger-action="enable"
+        data-trigger=".children_list .control-list input[type=checkbox]:not(.switcher)"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', 'disabled');"
+        data-stripe-load-indicator>
+        Удалить
+    </button>
+</div>

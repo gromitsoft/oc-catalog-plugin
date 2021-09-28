@@ -1,0 +1,47 @@
+# ===================================
+#  List Behavior Config
+# =================no-image.svg==================
+
+# Model List Column configuration
+list: $/gromit/catalog/controllers/categories/config/list/columns/categories.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Category
+
+# List Title
+title: Manage Categories
+
+# Link URL for each record
+recordUrl: gromit/catalog/categories/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 20
+
+# Display page numbers with pagination, disable to improve performance
+showPageNumbers: true
+
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: false
+
+# Default sorting column
+# defaultSort:
+#     column: created_at
+#     direction: desc
+
+structure:
+    showTree: true
+    showReorder: true
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: toolbars/categories

@@ -1,0 +1,36 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/gromit/catalog/controllers/groups/config/list/columns/properties.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Property
+
+# Link URL for each record
+recordOnClick: "$.popup({ handler: 'onOpenPopup', extraData: { property_id: ':id', definition: 'property' } })"
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Display page numbers with pagination, disable to improve performance
+showPageNumbers: true
+
+# Displays the list column set up button
+showSetup: false
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+structure:
+    showTree: false
+    showReorder: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: toolbars/properties

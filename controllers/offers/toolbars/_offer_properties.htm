@@ -1,0 +1,33 @@
+<div data-control="toolbar">
+    <button class="btn btn-sm btn-default oc-icon-plus"
+            data-control="popup"
+            data-handler="onOpenPopup"
+            data-size="medium"
+            data-request-data="popupDefinition: 'group'">
+        Добавить набор
+    </button>
+
+    <button class="btn btn-sm btn-default oc-icon-plus"
+            data-control="popup"
+            data-handler="onOpenOfferPropertyForm"
+            data-size="medium"
+            data-request-success="$('#close-modal').trigger('click')"
+    >
+        Добавить характеристику
+    </button>
+
+    <button
+        class="btn btn-sm btn-danger oc-icon-trash-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.offer_properties_list .control-list').listWidget('getChecked') })"
+        data-request="onDeleteOfferProperties"
+        data-request-confirm="<?= e(trans('backend::lang.list.delete_selected_confirm')) ?>"
+        data-trigger-action="enable"
+        data-trigger=".offer_properties_list .control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', 'disabled')"
+        data-stripe-load-indicator>
+        Удалить выбранные
+    </button>
+
+</div>

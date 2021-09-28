@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Group
+
+# Model Form Field configuration
+form: $/gromit/catalog/controllers/groups/config/form/fields/groups.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Group
+
+# Default redirect location
+defaultRedirect: gromit/catalog/groups
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: gromit/catalog/groups/update/:id
+    redirectClose: gromit/catalog/groups
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: gromit/catalog/groups
+    redirectClose: gromit/catalog/groups
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

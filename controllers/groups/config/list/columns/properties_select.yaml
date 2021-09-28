@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Характеристика
+        width: 30%
+        searchable: true
+
+    alt_name:
+        label: Название для сайта
+        searchable: true

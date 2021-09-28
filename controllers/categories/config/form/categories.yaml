@@ -1,0 +1,30 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Категория
+
+# Model Form Field configuration
+form: $/gromit/catalog/controllers/categories/config/form/fields/categories.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Category
+
+# Default redirect location
+defaultRedirect: gromit/catalog/categories
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: gromit/catalog/categories/update/:id
+    redirectClose: gromit/catalog/categories
+    flashSave: Категория создана
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: gromit/catalog/categories
+    redirectClose: gromit/catalog/categories
+    flashSave: Категория сохранена
+    flashDelete: Категория удалена

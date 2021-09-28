@@ -1,0 +1,16 @@
+<?php
+
+use GromIT\Catalog\Controllers\Categories;
+use GromIT\Catalog\Models\Category;
+
+/** @var Categories $this */
+/** @var Category $record */
+
+?>
+
+<div>
+    <a href="<?= $this->actionUrl('update', $record->id) ?>"
+       class="btn btn-default btn-xs" role="button">
+        Ред.
+    </a>
+</div>

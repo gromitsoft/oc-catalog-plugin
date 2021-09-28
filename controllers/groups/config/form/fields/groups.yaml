@@ -1,0 +1,76 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Название набора
+        comment: Укажите название набора характеристик
+        span: left
+
+    description:
+        label: Текстовое описание
+        type: richeditor
+        toolbarButtons: fullscreen, bold, italic, underline, strikeThrough, clearFormatting, html
+        span: right
+
+    alt_name:
+        label: Альтернативное название
+        comment: Дополнительное название, например для вывода на сайт
+        preset:
+            field: name
+            type: exact
+        span: left
+
+    slug:
+        label: В транслите
+        comment: Название в транслите
+        preset:
+            field: name
+            type: slug
+        span: left
+
+
+tabs:
+
+    fields:
+
+        properties:
+            context: update
+            type: partial
+            path: partials/properties
+            tab: Характеристики
+
+secondaryTabs:
+    fields:
+        image:
+            label: Основное фото
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+
+        images:
+            label: Дополнительные фотографии
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto

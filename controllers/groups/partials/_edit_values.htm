@@ -1,0 +1,21 @@
+<?php
+
+use GromIT\Catalog\Models\Property;
+use Backend\Facades\Backend;
+
+/** @var Property $record */
+
+?>
+
+<div class="edit_values">
+    <div>
+        <?= $record->values->count() ?>
+    </div>
+    <div>
+        <a href="<?= Backend::url('gromit/catalog/properties/update/' . $record->id
+            . '?controller=groups&action=update&record_id=' . $this->params[0]) ?>"
+           class="btn btn-default btn-xs" role="button">
+            Ред.
+        </a>
+    </div>
+</div>

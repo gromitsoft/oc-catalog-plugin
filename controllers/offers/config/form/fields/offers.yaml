@@ -1,0 +1,86 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: Название предложения
+        comment: Укажите название предложения
+        span: left
+
+    product:
+        label: Родительский товар
+        type: relation
+        emptyOption: --- Выберите товар ---
+        comment: Выберите товар, к которому относится предложение
+        span: right
+
+    slug:
+        label: В транслите
+        comment: Название в транслите
+        preset:
+            field: name
+            type: slug
+        span: left
+
+    description:
+        label: Текстовое описание
+        type: richeditor
+        toolbarButtons: fullscreen, bold, italic, underline, strikeThrough, clearFormatting, html
+        span: right
+
+    vendor_code:
+        label: Артикул
+        span: left
+        comment: Укажите артикул предложения
+
+tabs:
+
+    fields:
+
+        offer_properties:
+            context: update
+            type: partial
+            path: partials/offer_properties
+            tab: Характеристики
+
+secondaryTabs:
+    fields:
+        image:
+            label: Основное фото
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+
+        images:
+            label: Дополнительные фотографии
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+
+        is_active:
+            label: Активное предложение
+            type: switch
+            on: Да
+            off: Нет

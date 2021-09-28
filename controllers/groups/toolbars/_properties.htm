@@ -1,0 +1,47 @@
+<div data-control="toolbar">
+
+    <button class="btn btn-sm btn-default oc-icon-link"
+            data-control="popup"
+            data-handler="onShowFreeProperties"
+            data-size="large"
+            data-request-data="">
+        Добавить
+    </button>
+
+    <button class="btn btn-sm btn-default oc-icon-plus"
+            data-control="popup"
+            data-handler="onOpenPopup"
+            data-size="medium"
+            data-request-data="popupDefinition: 'property'">
+        Создать
+    </button>
+
+    <button
+        class="btn btn-sm btn-danger oc-icon-unlink properties_list__unlink"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.properties_list .control-list').listWidget('getChecked') })"
+        data-request="onUnlinkProperties"
+        data-request-confirm="Отвязать выбранные характеристики?"
+        data-trigger-action="enable"
+        data-trigger=".properties_list .control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', 'disabled'); $('.properties_list__remove').prop('disabled', 'disabled');"
+        data-stripe-load-indicator>
+        Отвязать
+    </button>
+
+    <button
+        class="btn btn-sm btn-danger oc-icon-trash-o properties_list__remove"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.properties_list .control-list').listWidget('getChecked') })"
+        data-request="onDeleteProperties"
+        data-request-confirm="Удалить выбранные характеристики?"
+        data-trigger-action="enable"
+        data-trigger=".properties_list .control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', 'disabled'); $('.properties_list__unlink').prop('disabled', 'disabled');"
+        data-stripe-load-indicator>
+        Удалить
+    </button>
+
+</div>

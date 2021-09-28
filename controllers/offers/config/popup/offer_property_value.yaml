@@ -1,0 +1,17 @@
+type: form
+actionBtnLabel: Сохранить
+actionOnClick: onSaveValues
+closeOnSuccess: true
+modelClass: GromIT\Catalog\Models\OfferPropertyValue
+form:
+    fields:
+
+        id:
+            cssClass: hidden
+
+        value_form:
+            label: Значение
+            type: partial
+            path: partial/offer_property_values
+
+popupId: offer-property-value

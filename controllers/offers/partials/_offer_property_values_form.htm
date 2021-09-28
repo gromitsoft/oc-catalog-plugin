@@ -1,0 +1,51 @@
+<?php
+
+use GromIT\Catalog\Controllers\Offers;
+use GromIT\Catalog\Models\OfferProperty;
+use GromIT\Catalog\Models\Property;
+
+/** @var Property $property */
+/** @var OfferProperty $offer_property */
+/** @var Offers $this */
+
+?>
+
+<div class="modal-header">
+    <button type="button" id="close-modal" class="close" data-dismiss="popup">&times;</button>
+    <h4 class="modal-title">
+        Редактирование значений
+    </h4>
+</div>
+<div class="modal-body">
+    <?= Form::open(['class' => 'layout']) ?>
+    <div class="layout-row">
+        <input type="hidden" name="offer_property_id" value="<?= $offer_property->id ?>">
+        <div id="values_list">
+            <?= $this->makePartial(
+                'partials/offer_property_values_list',
+                [
+                    'property'       => $property,
+                    'offer_property' => $offer_property,
+                ]
+            ) ?>
+        </div>
+    </div>
+
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button
+                type="submit"
+                data-request="onSaveOfferPropertyValues"
+                data-load-indicator="Сохраняем"
+                data-request-success="$('#close-modal').trigger('click')"
+                class="btn btn-default btn-block">
+                Сохранить
+            </button>
+        </div>
+    </div>
+
+    <?= Form::close() ?>
+</div>
+
+
+

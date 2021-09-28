@@ -1,0 +1,24 @@
+1.0.1:
+    - First version of Catalog
+    - === Create categories ===
+    - create_categories_table.php
+    - === Create groups and properties-value ===
+    - create_groups_table.php
+    - create_properties_table.php
+    - create_values_table.php
+    - === Create products and product-properties ===
+    - create_products_table.php
+    - create_product_properties_table.php
+
+1.0.2:
+    - === Product property values ===
+    - create_product_property_values_table.php
+
+1.0.3:
+    - === Offers ===
+    - create_offers_table.php
+    - create_offer_properties_table.php
+
+1.0.4:
+    - === Offer property values ===
+    - create_offer_property_values_table.php

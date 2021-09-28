@@ -1,0 +1,16 @@
+type: form
+actionBtnLabel: Добавить
+actionOnClick: onAddGroup
+closeOnSuccess: true
+modelClass: GromIT\Catalog\Models\OfferProperty
+form:
+    fields:
+
+        offer_id:
+            label: offer_id
+
+        property_id:
+            label: Характеристика
+            type: dropdown
+
+popupId: offer-properties-property

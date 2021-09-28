@@ -1,0 +1,26 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Характеристика
+        width: 30%
+        searchable: true
+
+    alt_name:
+        label: Альтернативное название
+        searchable: true
+
+    multiple:
+        label: Дополнительно
+        type: partial
+        path: $/gromit/catalog/controllers/properties/partials/_multiple.htm
+
+    edit_value:
+        label: Значения
+        type: partial
+        path: partials/edit_values
+        clickable: false
+        searchable: false
+        sortable: false

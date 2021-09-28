@@ -1,0 +1,80 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Название категории
+        comment: Укажите название категории
+        span: left
+
+    description:
+        label: Текстовое описание
+        type: richeditor
+        toolbarButtons: fullscreen, bold, italic, underline, strikeThrough, clearFormatting, html
+        span: right
+
+    slug:
+        label: В транслите
+        comment: Название в транслите
+        preset:
+            field: name
+            type: slug
+        span: left
+
+    parent:
+        label: Родительская категория
+        type: relation
+        emptyOption: --- Выберите категорию ---
+        comment: Выберите родительскую категорию
+        span: left
+
+    _children_section:
+        label: Дочерние категории
+        type: section
+        context: update
+
+    children:
+        context: update
+        type: partial
+        path: partials/children
+
+secondaryTabs:
+    fields:
+        image:
+            label: Основное фото
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+
+        images:
+            label: Дополнительные фотографии
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+
+        is_active:
+            label: Активная категория
+            type: switch
+            on: Да
+            off: Нет

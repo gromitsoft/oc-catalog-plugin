@@ -1,0 +1,30 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Предложение
+
+# Model Form Field configuration
+form: $/gromit/catalog/controllers/offers/config/form/fields/offers.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Offer
+
+# Default redirect location
+defaultRedirect: gromit/catalog/offers
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: gromit/catalog/offers/update/:id
+    redirectClose: gromit/catalog/offers
+    flashSave: Предложение создано
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: gromit/catalog/offers
+    redirectClose: gromit/catalog/offers
+    flashSave: Предложение сохранено
+    flashDelete: Предложение удалено

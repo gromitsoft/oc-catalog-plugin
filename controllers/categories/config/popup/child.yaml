@@ -1,0 +1,24 @@
+title: Дочерняя категория
+type: form
+actionBtnLabel: Сохранить
+actionOnClick: onSaveChild
+closeOnSuccess: true
+modelClass: GromIT\Catalog\Models\Category
+form:
+    fields:
+
+        id:
+            cssClass: hidden
+
+        name:
+            label: Название категории
+            comment: Укажите название категории
+
+        slug:
+            label: В транслите
+            comment: Название в транслите
+            preset:
+                field: name
+                type: slug
+
+popupId: category-child

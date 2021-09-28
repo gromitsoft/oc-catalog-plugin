@@ -1,0 +1,46 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/gromit/catalog/controllers/groups/config/list/columns/groups.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Group
+
+# List Title
+title: Manage Groups
+
+# Link URL for each record
+recordUrl: gromit/catalog/groups/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 20
+
+# Display page numbers with pagination, disable to improve performance
+showPageNumbers: true
+
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: true
+
+structure:
+    showTree: false
+    showReorder: true
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: toolbars/groups
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt

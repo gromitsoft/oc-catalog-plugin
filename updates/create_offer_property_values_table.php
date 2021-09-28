@@ -1,0 +1,38 @@
+<?php namespace GromIT\Catalog\Updates;
+
+use October\Rain\Database\Schema\Blueprint;
+use October\Rain\Database\Updates\Migration;
+use Schema;
+
+/**
+ * CreateOfferPropertyValuesTable Migration
+ */
+class CreateOfferPropertyValuesTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('gromit_catalog_offer_property_values', function (Blueprint $table) {
+
+            $table->unsignedInteger('offer_property_id');
+            $table
+                ->foreign('offer_property_id', 'offer_property_value')
+                ->references('id')
+                ->on('gromit_catalog_offer_properties')
+                ->onDelete('CASCADE');
+
+            $table->unsignedInteger('value_id');
+            $table
+                ->foreign('value_id', 'offer_property_value_value')
+                ->references('id')
+                ->on('gromit_catalog_values')
+                ->onDelete('CASCADE');
+
+            $table->primary(['offer_property_id', 'value_id'], 'offer_property_value_primary_id');
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('gromit_catalog_offer_property_values');
+    }
+}

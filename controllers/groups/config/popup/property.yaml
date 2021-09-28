@@ -1,0 +1,23 @@
+type: form
+actionBtnLabel: Сохранить
+actionOnClick: onSaveProperty
+closeOnSuccess: true
+modelClass: GromIT\Catalog\Models\Property
+form:
+    fields:
+        id:
+            cssClass: hidden
+        name:
+            label: Характеристика
+
+        alt_name:
+            label: Альтернативное название
+            preset:
+                field: name
+                type: exact
+
+        multiple:
+            label: Можно выбрать несколько значений
+            type: switch
+
+popupId: group-property

@@ -1,0 +1,28 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/gromit/catalog/controllers/categories/config/list/columns/children.yaml
+
+# Model Class name
+modelClass: GromIT\Catalog\Models\Category
+
+# Link URL for each record
+recordOnClick: "$.popup({ handler: 'onOpenPopup', extraData: { child_id: ':id', definition: 'child' } })"
+
+# Message to display if the list is empty
+noRecordsMessage: Нет дочерних категорий
+
+structure:
+    showTree: false
+    showReorder: true
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: toolbars/children
+

@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    property_name:
+        label: Характеристика
+        type: partial
+        path: partials/offer_property_name
+
+    savedValues:
+        label: Значения
+
+    multiple:
+        label: '&nbsp;'
+        type: partial
+        path: partials/multiple_properties

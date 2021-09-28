@@ -1,0 +1,24 @@
+<?php
+
+use GromIT\Catalog\Models\Offer;
+
+/** @var Offer $record */
+
+?>
+
+<?php if ($record->image): ?>
+    <img
+        class="img-rounded"
+        src="<?=$record->image->getThumb('30', '30', ['mode' => 'crop'])?>"
+        loading="lazy"
+    >
+<?php else: ?>
+    <img
+        class="img-rounded"
+        src="/plugins/gromit/catalog/assets/img/no-image.svg"
+        loading="lazy"
+        width="20"
+    >
+<?php endif ?>
+<?= $record->name ?>
+

@@ -1,0 +1,16 @@
+<div data-control="toolbar">
+
+    <button
+        class="btn btn-primary oc-icon-plus-circle-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.properties_list_link .control-list').listWidget('getChecked') })"
+        data-request="onLinkProperties"
+        data-trigger-action="enable"
+        data-trigger=".properties_list_link .control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', 'disabled')"
+        data-dismiss="popup">
+        Добавить выбранные
+    </button>
+
+</div>

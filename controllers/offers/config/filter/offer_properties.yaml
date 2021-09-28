@@ -1,0 +1,8 @@
+scopes:
+
+    byGroups:
+        label: Наборы характеристик
+        modelClass: GromIT\Catalog\Models\OfferProperty
+        type: group
+        scope: byFilterGroups
+        options: getFilterGroupsOptions
